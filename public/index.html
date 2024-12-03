@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rust Raid Tool - by -myles.</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="top-container">
+      <h1>Rust Raid Tool v1.0</h1>
+
+      <div class="segmented-control">
+        <button class="active" onclick="switchTab('chart')">
+          Raid Cost Chart
+        </button>
+        <button onclick="switchTab('base')">Base Strength Calculator</button>
+        <button onclick="switchTab('sulfur')">Material Calculator</button>
+      </div>
+
+      <div id="chart" class="container">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>HP</th>
+              <th>Satchels</th>
+              <th>C4</th>
+              <th>Rockets</th>
+            </tr>
+          </thead>
+          <tbody id="raidCostsTable"></tbody>
+        </table>
+      </div>
+
+      <div id="base" class="container hidden">
+        <div id="baseInputs">
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/4/42/Wood_Tier_Icon.png/revision/latest/scale-to-width-down/64?cb=20160520153342"
+              alt="Wooden Wall"
+            />
+            <label for="woodenWall">Wooden Wall</label>
+            <input type="number" id="WoodenWall" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/8/84/Stone_Tier_Icon.png/revision/latest/scale-to-width-down/64?cb=20160520153407"
+              alt="Stone Wall"
+            />
+            <label for="stoneWall">Stone Wall</label>
+            <input type="number" id="StoneWall" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/4/47/Sheet_Metal_Tier_Icon.png/revision/latest/scale-to-width-down/64?cb=20160520153438"
+              alt="Sheet Metal Wall"
+            />
+            <label for="sheetMetalWall">Sheet Metal Wall</label>
+            <input type="number" id="SheetMetalWall" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/f/fa/Armored_Tier_Icon.png/revision/latest/scale-to-width-down/64?cb=20160520153507"
+              alt="Armored Wall"
+            />
+            <label for="armouredWall">Armoured Wall</label>
+            <input type="number" id="ArmouredWall" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/e/e3/Garage_Door_icon.png/revision/latest/scale-to-width-down/64?cb=20171111042351"
+              alt="Garage Door"
+            />
+            <label for="garageDoor">Garage Door</label>
+            <input type="number" id="GarageDoor" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/b/bc/Armored_Door_icon.png/revision/latest/scale-to-width-down/64?cb=20160211201148"
+              alt="Armored Door"
+            />
+            <label for="armouredDoor">Armoured Door</label>
+            <input type="number" id="ArmouredDoor" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/7/7c/Ladder_Hatch_icon.png/revision/latest/scale-to-width-down/64?cb=20160203005615"
+              alt="Ladder Hatch"
+            />
+            <label for="ladderHatch">Ladder Hatch</label>
+            <input type="number" id="LadderHatch" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/9/96/High_External_Wooden_Wall_icon.png/revision/latest/scale-to-width-down/64?cb=20151106061300"
+              alt="High External Wooden Wall"
+            />
+            <label for="highExternalWoodenWall"
+              >High External Wooden Wall</label
+            >
+            <input type="number" id="HighExternalWoodenWall" />
+          </div>
+          <div class="form-group">
+            <img
+              src="https://static.wikia.nocookie.net/play-rust/images/b/b6/High_External_Stone_Wall_icon.png/revision/latest/scale-to-width-down/64?cb=20151106060841"
+              alt="High External Stone Wall"
+            />
+            <label for="highExternalStoneWall">High External Stone Wall</label>
+            <input type="number" id="HighExternalStoneWall" />
+          </div>
+        </div>
+        <button onclick="calculateFromBase()">Calculate Explosives</button>
+        <div id="resultsBase" class="results"></div>
+      </div>
+
+      <div id="sulfur" class="container hidden">
+        <div class="form-group">
+          <label for="sulfurInput">Available Sulfur:</label>
+          <input type="number" id="sulfurInput" />
+        </div>
+        <button onclick="calculateFromSulfur()">Calculate Materials</button>
+        <div id="resultsSulfur" class="results"></div>
+      </div>
+    </div>
+  </body>
+</html>
