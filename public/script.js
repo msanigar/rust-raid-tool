@@ -5,72 +5,84 @@ const data = {
       satchel: 200,
       c4: 550,
       rocket: 350,
+      explo556: 14,
     },
     StoneWall: {
       hp: 500,
       satchel: 100,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     SheetMetalWall: {
       hp: 1000,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     ArmouredWall: {
       hp: 2000,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     WoodenDoor: {
       hp: 200,
       satchel: 200,
       c4: 550,
       rocket: 350,
+      explo556: 7,
     },
     SheetMetalDoor: {
       hp: 250,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     GarageDoor: {
       hp: 600,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     ArmouredDoor: {
       hp: 800,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     LadderHatch: {
       hp: 250,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     HighExternalWoodenWall: {
       hp: 600,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
     HighExternalStoneWall: {
       hp: 500,
       satchel: 115,
       c4: 275,
       rocket: 175,
+      explo556: 7,
     },
   },
   explosives: {
     C4: { sulfur: 2200, gunpowder: 1000, metalFragments: 200 },
     Rocket: { sulfur: 1400, gunpowder: 1000, metalFragments: 100 },
     Satchel: { sulfur: 480, gunpowder: 240, rope: 1 },
+    Explo556: { sulfur: 50, gunpowder: 25, metalFragments: 10 },
   },
 };
 
@@ -102,6 +114,7 @@ function populateRaidCosts() {
             <td>${Math.ceil(stats.hp / stats.satchel)}</td>
             <td>${Math.ceil(stats.hp / stats.c4)}</td>
             <td>${Math.ceil(stats.hp / stats.rocket)}</td>
+            <td>${Math.ceil(stats.hp / stats.explo556)}</td>
           </tr>
         `;
     tableBody.innerHTML += row;
